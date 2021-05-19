@@ -1,0 +1,97 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+ #couponaddnew {
+    display: flex;
+}
+table#couponaddform {
+    padding: 20px;
+}
+#couponaddform tbody tr th {
+    width: 150px;
+    text-align: left;
+}
+#couponaddform tbody tr td input,#couponaddform tbody tr td textarea {
+    width: 300px;
+}
+div#templatecss {
+    margin-top: 22px;
+    padding: 20px;
+    margin-left: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: fit-content;
+}
+#templatecssform tbody tr td input[type="number"]{
+    width: 100px;
+}
+#templatecssform tbody tr th {
+    text-align: left;
+}
+#templatecssform tbody tr th, #templatecssform tbody tr td {
+    height: 38px;
+    padding-left: 5px;
+}
+#templatecssform tbody tr:nth-child(even){
+    background-color: #fff;
+}
+button.published {
+    margin-left: 20px !important;
+    padding: 3px 20px !important;
+}
+
+#templateListstable thead tr th {
+    text-transform: uppercase;
+    padding: 10px 5px;
+    background-color: #fff;
+    color: #24c57b;
+}
+#templateListstable thead tr th, #templateListstable tbody tr td {
+    width: 150px;
+    text-align: left;
+}
+#templateListstable thead tr th:first-child, #templateListstable tbody tr td:first-child {
+    width: fit-content !important;
+    padding: 10px;
+    text-align: center;
+}
+#templateListstable tbody tr:nth-child(even){
+    background-color: #fff;
+    color: #24c57b;
+}
+.cshortcode {
+    text-align: center;
+    color: #24c57b !important;
+}
+.deletebtns {
+    text-align: right !important;
+}
+.edit a{
+    color: #24c57b;
+    text-decoration: none;
+}
+a:focus{
+    box-shadow: none !important;
+}
+.delete{
+    margin-left: 5px;
+    color: red;
+    cursor: pointer;
+}
+td.deletebtns form {
+    display: inline-block;
+}
+input[readonly] {
+    background-color: #4e4e4e;
+}
+.restcolor {
+    color: #fff;
+    background: indianred;
+    border: 1px solid #4e4e4e;
+    border-radius: 3px;
+    padding: 5px 10px;
+    width: 100%;
+    margin-top: 8px;
+    cursor: pointer;
+}
