@@ -11,6 +11,7 @@ h1.demologo {
     font-weight: 700;
     color: var(--primarycolor);
 }
+
 img.logimg {
     margin-bottom: 22px;
 }
@@ -20,6 +21,7 @@ h4.ctitle {
     color: var(--textscolors);
     letter-spacing: 6px;
     font-weight: 600;
+    margin-bottom: 20px;
 }
 a.getbtn {
     padding: 0px 20px;
@@ -95,6 +97,7 @@ h6.expire, h6.verified {
     color: rgb(136 136 136 / 55%);
 }
   
+
 @media screen and (max-width: 860px) {
     a.getbtn{
         width: 40%;

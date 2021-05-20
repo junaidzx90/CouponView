@@ -33,7 +33,7 @@
                         <input class="rating__input" name="rating" id="rating-5" value="5" <?php echo (($coupon->reviews == 5)? 'checked': ''); ?> type="radio">
                     </div>
                 </div>
-                <h6 class="expire">Expire: <?php echo _e($coupon->expires) ?></h6>
+                <h6 class="expire">Expires: <?php echo _e($coupon->expires) ?></h6>
               
             </div>
         </div>
