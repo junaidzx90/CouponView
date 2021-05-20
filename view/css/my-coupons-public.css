@@ -11,6 +11,9 @@ h1.demologo {
     font-weight: 700;
     color: var(--primarycolor);
 }
+img.logimg {
+    margin-bottom: 22px;
+}
 h4.ctitle {
     text-transform: uppercase;
     font-size: 32px;
