@@ -132,8 +132,8 @@ class My_Coupon_view {
 			$coupon = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}mycoupon_lists WHERE ID = $mcid");
 
 			if($coupon){
-				include_once plugin_dir_path( __FILE__ )."partials/my-coupons-css.php";
-				include_once plugin_dir_path( __FILE__ )."partials/my-coupons-front.php";
+				include plugin_dir_path( __FILE__ )."partials/my-coupons-css.php";
+				include plugin_dir_path( __FILE__ )."partials/my-coupons-front.php";
 			}
 			
 			return ob_get_clean();
