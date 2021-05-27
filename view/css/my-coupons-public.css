@@ -159,6 +159,8 @@ p.linktxt a {
 }
 .btnbox {
     text-align: center;
+    display: block;
+    margin-top: 36px;
 }
 div#full-stars-example,h6.votes {
     text-align: center;

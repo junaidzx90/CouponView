@@ -60,10 +60,10 @@ class My_Coupon_view {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
-		wp_register_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/my-coupons-view.css', array(), $this->version, 'all' );
+		wp_register_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/my-coupons-view.css', array(), microtime(), 'all' );
 	}
 	public function public_enqueue_styles() {
-		wp_register_style( 'my-coupons-public', plugin_dir_url( __FILE__ ) . 'css/my-coupons-public.css', array(), $this->version, 'all' );
+		wp_register_style( 'my-coupons-public', plugin_dir_url( __FILE__ ) . 'css/my-coupons-public.css', array(), microtime(), 'all' );
 	}
 
 	/**
