@@ -17,7 +17,7 @@ wp_enqueue_style(  'my-coupons' );
 if(isset($_POST['delete'])){
     $mcid = intval($_POST['mcid']);
     global $wpdb;
-    $wpdb->query("DELETE FROM {$wpdb->prefix}mycoupon_lists WHERE ID = $mcid");
+    $wpdb->query("DELETE FROM {$wpdb->prefix}mycoupon_lists_v3 WHERE ID = $mcid");
 }
 ?>
 
@@ -38,7 +38,7 @@ if(isset($_POST['delete'])){
         <tbody>
             <?php
             global $wpdb;
-            $coupons = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}mycoupon_lists");
+            $coupons = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}mycoupon_lists_v3");
             if($coupons){
                 $i = 1;
                 foreach($coupons as $coupon){

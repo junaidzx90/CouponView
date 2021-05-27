@@ -32,20 +32,21 @@ class My_Coupon_Activator {
 
 	public static function activate() {
 		global $wpdb;
-		$mycoupon_lists = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}mycoupon_lists ( `ID` INT NOT NULL AUTO_INCREMENT,
+		$mycoupon_lists_v3 = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}mycoupon_lists_v3 ( `ID` INT NOT NULL AUTO_INCREMENT,
 		`title` VARCHAR(255) NOT NULL,
 		`logo` VARCHAR(255) NOT NULL,
 		`headline` VARCHAR(255) NOT NULL,
+		`couponheadline` VARCHAR(255) NOT NULL,
+		`subheadline` VARCHAR(255) NOT NULL,
 		`coupon_code` VARCHAR(55) NOT NULL,
 		`target_url` VARCHAR(255) NOT NULL,
-		`reviews` FLOAT NOT NULL,
-		`expires` DATE NOT NULL,
-		`verified` DATE NOT NULL,
-		`description` TEXT NOT NULL,
+		`reviews` INT NOT NULL,
+		`votes` INT NOT NULL,
+		`description` VARCHAR(255) NOT NULL,
 		`styles` TEXT NOT NULL,
 		PRIMARY KEY (`ID`)) ENGINE = InnoDB";
 		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-		dbDelta($mycoupon_lists);
+		dbDelta($mycoupon_lists_v3);
 	}
 
 }

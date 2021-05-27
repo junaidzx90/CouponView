@@ -106,7 +106,7 @@ class My_Coupon_view {
 		global $wpdb;
 		if(isset($_POST['data'])){
 			$id = intval($_POST['data']);
-			$tbl = $wpdb->prefix.'mycoupon_lists';
+			$tbl = $wpdb->prefix.'mycoupon_lists_v3';
 			$wpdb->update($tbl,array('styles' => ''),array('ID' => $id),array('%s'),array('%d'));
 			die;
 		}
@@ -129,14 +129,16 @@ class My_Coupon_view {
 			wp_enqueue_style(  'my-coupons-public' );
 			global $wpdb;
 			$mcid = intval($atts['mc']);
-			$coupon = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}mycoupon_lists WHERE ID = $mcid");
+			$coupon = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}mycoupon_lists_v3 WHERE ID = $mcid");
 
 			if($coupon){
 				include plugin_dir_path( __FILE__ )."partials/my-coupons-css.php";
 				include plugin_dir_path( __FILE__ )."partials/my-coupons-front.php";
 			}
 			
-			return ob_get_clean();
+			$output = ob_get_contents();
+			ob_end_clean();
+			return $output;
 			exit;
 		}
 		

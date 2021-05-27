@@ -3,7 +3,7 @@
  // Added colors into veriables
  $primarycolor = $styles['primarycolor'];
  $secondarycolor = $styles['secondarycolor'];
- $description = $styles['descriptioncolor'];
+ $playbtnbg = $styles['playbtnbg'];
  $textscolors = $styles['textscolors'];
 ?>
 <style>
@@ -12,22 +12,22 @@
             if(!empty($primarycolor)){
                 echo $primarycolor;
             }else{
-                echo '#bfa970';
+                echo '#a39145';
             }
         ?>;
         --secondarycolor: <?php 
             if(!empty($secondarycolor)){
                 echo $secondarycolor;
             }else{
-                echo '#231f20';
+                echo '#ffffff';
             }
         ?>;
 
-        --description: <?php 
-            if(!empty($description)){
-                echo $description;
+        --playbtnbg: <?php 
+            if(!empty($playbtnbg)){
+                echo $playbtnbg;
             }else{
-                echo '#ababab';
+                echo '#74be41';
             }
         ?>;
         --textscolors: <?php 
