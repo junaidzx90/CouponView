@@ -29,3 +29,8 @@
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
+
+global $wpdb;
+require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+$del = $wpdb->query("DROP TABLE IF EXISTS {$wpdb->prefix}mycoupon_lists_v3");
+dbDelta($del);

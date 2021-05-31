@@ -42,7 +42,8 @@ class My_Coupon_Activator {
 		`target_url` VARCHAR(255) NOT NULL,
 		`reviews` INT NOT NULL,
 		`votes` INT NOT NULL,
-		`description` VARCHAR(255) NOT NULL,
+		`tandc_texts` VARCHAR(255) NOT NULL,
+		`tandc_url` VARCHAR(255) NOT NULL,
 		`styles` TEXT NOT NULL,
 		PRIMARY KEY (`ID`)) ENGINE = InnoDB";
 		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');

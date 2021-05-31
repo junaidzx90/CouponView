@@ -7,7 +7,7 @@
     border: 1px solid #ddd;
     border-radius: 3px;
     box-shadow: 1px 1px 6px -3px black;
-    background: var(--secondarycolor);
+    background: var(--secondarycolor) !important;
 }
 .couponshowwrapper {
     width: 70%;
@@ -37,18 +37,18 @@
 }
 .reviews-section {
     width: 30%;
-    background: var(--secondarycolor);
+    background: var(--secondarycolor) !important;
     display: flex;
 }
 h1.demologo {
     margin: 0;
     font-weight: 700;
-    color: var(--primarycolor);
+    color: var(--primarycolor) !important;
 }
 h4.ctitle {
     text-transform: uppercase;
     font-size: 26px;
-    color: var(--textscolors);
+    color: var(--textscolors) !important;
     letter-spacing: 0px;
     font-weight: 600;
     margin-bottom: 16px;
@@ -57,7 +57,7 @@ h4.ctitle sup {
     color: #ffcf78;
 }
 h5.secttl, h1.bonusttl {
-    color: var(--textscolors);
+    color: var(--textscolors) !important;
     text-transform: uppercase;
     margin-bottom: 5px;
 }
@@ -71,12 +71,12 @@ h1.bonusttl {
 a.getbtn {
     margin-top: 25px;
     padding: 8px 20px;
-    background: var(--primarycolor);
+    background: var(--primarycolor) !important;
     min-width: 30%;
     border-radius: 3px;
     font-size: 22px;
     text-transform: uppercase;
-    color: var(--textscolors);
+    color: var(--textscolors) !important;
     display: inline-block;
     min-height: 60px;
     letter-spacing: 1px;
@@ -139,7 +139,7 @@ h1.ratingnumber {
 }
 a.playbtn {
     padding: 14px 50px;
-    background: var(--playbtnbg);
+    background: var(--playbtnbg) !important;
     border-radius: 25px;
     font-size: 18px;
     text-transform: uppercase;
@@ -165,19 +165,13 @@ p.linktxt a {
 div#full-stars-example,h6.votes {
     text-align: center;
 }
-#full-stars-example .rating__icon--star {
-    color: orange;
-}
+
 #full-stars-example .rating__icon--none {
     color: #eee;
 }
 #full-stars-example .rating__input--none:checked + .rating__label .rating__icon--none {
     color: red;
 }
-#full-stars-example .rating__input:checked ~ .rating__label .rating__icon--star {
-    color: rgb(136 136 136 / 55%);
-}
-  
 
 @media screen and (max-width: 860px) {
     .couponshowwrapper {

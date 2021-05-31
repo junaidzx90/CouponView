@@ -12,7 +12,8 @@ $coupon_code = '';
 $target_url = '';
 $reviews = '';
 $votes = '';
-$description = '';
+$tandc_texts = '';
+$tandc_url = '';
 $styles = '';
 // Colors
 
@@ -36,7 +37,8 @@ if(isset($_POST['published']) || isset($_POST['update'])){
         $post_target_url = esc_url_raw($_POST['pagelink']);
         $post_reviews_txt = intval($_POST['reviews']);
         $post_votes_txt = intval($_POST['votes']);
-        $post_description = sanitize_text_field(stripslashes($_POST['description']));
+        $post_tandc_texts = sanitize_text_field(stripslashes($_POST['tandc_texts']));
+        $tandc_url = sanitize_text_field(stripslashes($_POST['tandc_url']));
         $post_styles = array(
             'secondarycolor'      => isset($_POST['secondarycolor'])?$_POST['secondarycolor']:'',
             'textscolors'   => isset($_POST['textscolors'])?$_POST['textscolors']:'',
@@ -58,12 +60,13 @@ if(isset($_POST['published']) || isset($_POST['update'])){
                     'target_url' => $post_target_url,
                     'reviews' => $post_reviews_txt,
                     'votes' => $post_votes_txt,
-                    'description' => $post_description,
+                    'tandc_texts' => $post_tandc_texts,
+                    'tandc_url' => $tandc_url,
                     'styles' => json_encode($post_styles),
                 ),array(
                     'ID' => $_POST['mcid']
                 ),array(
-                    '%s','%s','%s','%s','%s','%s','%s','%d','%d','%s','%s'
+                    '%s','%s','%s','%s','%s','%s','%s','%d','%d','%s','%s','%s'
                 ),array(
                     '%d'
                 ));
@@ -80,10 +83,11 @@ if(isset($_POST['published']) || isset($_POST['update'])){
                 'target_url' => $post_target_url,
                 'reviews' => $post_reviews_txt,
                 'votes' => $post_votes_txt,
-                'description' => $post_description,
+                'tandc_texts' => $post_tandc_texts,
+                'tandc_url' => $tandc_url,
                 'styles' => json_encode($post_styles),
             ),array(
-                '%s','%s','%s','%s','%s','%s','%s','%d','%d','%s','%s'
+                '%s','%s','%s','%s','%s','%s','%s','%d','%d','%s','%s','%s'
             ));
 
             if(!is_wp_error( $wpdb )){
@@ -109,7 +113,8 @@ if(isset($_REQUEST['mc'])){
         $target_url = $coupon->target_url;
         $reviews = $coupon->reviews;
         $votes = $coupon->votes;
-        $description = $coupon->description;
+        $tandc_texts = $coupon->tandc_texts;
+        $tandc_url = $coupon->tandc_url;
         $styles = json_decode($coupon->styles,true);
     }
 
@@ -130,7 +135,7 @@ if(isset($_REQUEST['mc'])){
                 <tbody>
                     <tr>
                         <th>Coupon Title</th>
-                        <td> <input type="text" placeholder="Title" name="temptitle" value="<?php echo __($title, 'my-coupons') ?>"> </td>
+                        <td> <input type="text" placeholder="Title" name="temptitle" value="<?php echo __($title, 'my-coupons') ?>" autocomplete="off"> </td>
                     </tr>
                     <tr><td><hr><td></tr>
                     <tr>
@@ -139,36 +144,42 @@ if(isset($_REQUEST['mc'])){
                     </tr>
                     <tr>
                         <th>Headline</th>
-                        <td> <input type="text" placeholder="Headline" name="headline" value="<?php echo __($headline, 'my-coupons') ?>"> </td>
+                        <td> <input type="text" placeholder="Headline" name="headline" value="<?php echo __($headline, 'my-coupons') ?>" autocomplete="off"> </td>
                     </tr>
                     <tr>
                         <th>Coupon Headline</th>
-                        <td> <input type="text" placeholder="Couponheadline" name="couponheadline" value="<?php echo __($couponheadline, 'my-coupons') ?>"> </td>
+                        <td> <input type="text" placeholder="Couponheadline" name="couponheadline" value="<?php echo __($couponheadline, 'my-coupons') ?>" autocomplete="off"> </td>
                     </tr>
                     <tr>
                         <th>Sub Headline</th>
-                        <td> <input type="text" placeholder="Subheadline" name="subheadline" value="<?php echo __($subheadline, 'my-coupons') ?>"> </td>
+                        <td> <input type="text" placeholder="Subheadline" name="subheadline" value="<?php echo __($subheadline, 'my-coupons') ?>" autocomplete="off"> </td>
                     </tr>
                     <tr>
                         <th>Coupon</th>
-                        <td> <input type="text" placeholder="Coupon Code" name="couponcode" value="<?php echo __($coupon_code, 'my-coupons') ?>"> </td>
+                        <td> <input type="text" placeholder="Coupon Code" name="couponcode" value="<?php echo __($coupon_code, 'my-coupons') ?>" autocomplete="off"> </td>
                     </tr>
                     <tr>
                         <th>Target URL</th>
-                        <td> <input type="url" placeholder="Page link" name="pagelink" value="<?php echo __($target_url, 'my-coupons') ?>"> </td>
+                        <td> <input type="url" placeholder="Page link" name="pagelink" value="<?php echo __($target_url, 'my-coupons') ?>" autocomplete="off"> </td>
                     </tr>
                     <tr>
                         <th>Reviews</th>
-                        <td> <input type="number" placeholder="Reviews" name="reviews" value="<?php echo __($reviews, 'my-coupons') ?>"> </td>
+                        <td> <input type="number" placeholder="Reviews" name="reviews" value="<?php echo __($reviews, 'my-coupons') ?>" autocomplete="off"> </td>
                     </tr>
                     <tr>
                         <th>Votes</th>
-                        <td> <input type="number" placeholder="Votes" name="votes" value="<?php echo __($votes, 'my-coupons') ?>"> </td>
+                        <td> <input type="number" placeholder="Votes" name="votes" autocomplete="off" value="<?php echo __($votes, 'my-coupons') ?>"> </td>
                     </tr>
                     <tr>
-                        <th>Description</th>
+                        <th>T&C's Texts</th>
                         <td> 
-                            <input type="text"placeholder="Leave blank if no need" name="description" value="<?php echo __($description, 'my-coupons') ?>">
+                            <input type="text" placeholder="T&C's Texts" name="tandc_texts" value="<?php echo __($tandc_texts, 'my-coupons') ?>" autocomplete="off">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>T&C's Url</th>
+                        <td> 
+                            <input type="text"placeholder="T&C's url" name="tandc_url" value="<?php echo __($tandc_url, 'my-coupons') ?>" autocomplete="off">
                             <input type="hidden" name="mcid" value="<?php echo $mcid; ?>">  
                         </td>
                     </tr>
